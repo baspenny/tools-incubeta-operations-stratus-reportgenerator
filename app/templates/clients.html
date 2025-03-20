@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Clients - Stratus Report Generator{% endblock %}
+
+{% block extra_css %}
+<style>
+    .client-table th, .client-table td {
+        vertical-align: middle;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow mb-4">
+            <div class="card-header primary-gradient">
+                <h5 class="mb-0">Clients Overview</h5>
+            </div>
+            <div class="card-body">
+                {% if clients %}
+                <div class="table-responsive">
+                    <table class="table table-hover client-table" style="background-color: var(--card-bg);">
+                        <thead>
+                            <tr style="background-color: var(--card-bg);">
+                                <th>Name</th>
+                                <th>Acumatica Code</th>
+                                <th>Country</th>
+                                <th>Creamos Client ID</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for client in clients %}
+                            <tr style="background-color: var(--card-bg);">
+                                <td>{{ client.name }}</td>
+                                <td>{{ client.acumatica_code }}</td>
+                                <td>{{ client.country.name }}</td>
+                                <td>{{ client.creamos_client_id }}</td>
+                                <td>
+                                    <a href="{% url 'client_detail' client.id %}" class="btn-modern-view">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-info">
+                    <p>No clients found in the database.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}{% endblock %}

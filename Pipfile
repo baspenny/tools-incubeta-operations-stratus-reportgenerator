@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+python-environ = "*"
+django-htmx = "*"
+social-auth-app-django = "*"
+pillow = "*"
+django-storages = "*"
+google-cloud-storage = "*"
+psycopg2-binary = "*"
+google-api-python-client = "*"
+google-auth = "*"
+google-cloud-bigquery = "*"
+pandas = "*"
+numpy = "*"
+
+[dev-packages]
+django-stubs = "*"
+pre-commit = "*"
+black = "*"
+djlint = "*"
+
+[requires]
+python_version = "3.12"

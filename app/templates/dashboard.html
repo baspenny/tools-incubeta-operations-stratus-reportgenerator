@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Stratus Report Generator{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h1 class="card-title">Dashboard</h1>
+                <p class="lead">Welcome to your personalized dashboard, {{ user.first_name|default:user.username }}!</p>
+                <hr>
+                <p>This is a protected page that only authenticated users can access.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-header primary-gradient">
+                <h5 class="mb-0">Report Generation</h5>
+            </div>
+            <div class="card-body">
+                <p>Create new reports based on your data sources.</p>
+                <a href="#" class="btn btn-primary">Generate Report</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-header success-gradient">
+                <h5 class="mb-0">Report History</h5>
+            </div>
+            <div class="card-body">
+                <p>View and manage your previously generated reports.</p>
+                <a href="#" class="btn btn-success">View History</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-header info-gradient">
+                <h5 class="mb-0">Settings</h5>
+            </div>
+            <div class="card-body">
+                <p>Configure your account and report preferences.</p>
+                <a href="#" class="btn btn-info">Settings</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow">
+            <div class="card-header warning-gradient">
+                <h5 class="mb-0">Recent Activity</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <p>No recent activity to display. Start generating reports to see your activity here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
